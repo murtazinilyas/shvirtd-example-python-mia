@@ -3,10 +3,11 @@ include:
 
 services:
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile.python
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile.python
     container_name: mia-python
+    image: cr.yandex/crp8m8obdkmolgsfc3oc/mia-python:1
     expose:
       - 5000
     environment:
