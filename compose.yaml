@@ -23,7 +23,7 @@ services:
     restart: on-failure
 
   db:
-    image: mysql:8
+    image: mariadb:10.1
     container_name: mia-db
     command: --mysql-native-password=ON
     environment:
@@ -31,12 +31,7 @@ services:
       - MYSQL_DATABASE=${MYSQL_DATABASE}
       - MYSQL_USER=${MYSQL_USER}
       - MYSQL_PASSWORD=${MYSQL_PASSWORD}
-    volumes:
-      - mysql_data:/var/lib/mysql
     networks:
       backend:
         ipv4_address: 172.20.0.10
     restart: on-failure
-
-volumes:
-  mysql_data:
