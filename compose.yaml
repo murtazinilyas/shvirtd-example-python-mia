@@ -25,6 +25,7 @@ services:
   db:
     image: mysql:8
     container_name: mia-db
+    command: --mysql-native-password=ON
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
       - MYSQL_DATABASE=${MYSQL_DATABASE}
